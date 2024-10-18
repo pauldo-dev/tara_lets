@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../../styles/sass/Components.scss";
+import "../../sass/Components.scss";
 
 const Card = ({ title, children, className, image }) => {
   return (

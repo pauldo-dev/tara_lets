@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import defaultAvatarImage from "../images/avatar.png";
-import "../../styles/sass/Components.scss";
+import defaultAvatarImage from "../../images/avatar.png";
+import "../../sass/Components.scss";
 
 const Avatar = ({ src, alt, size }) => {
   return (

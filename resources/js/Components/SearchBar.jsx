@@ -1,7 +1,7 @@
 import React from "react";
 import { FiSearch } from "react-icons/fi";
 import PropTypes from "prop-types";
-import "../../styles/sass/Components.scss";
+import "../../sass/Components.scss";
 
 const SearchBar = ({ placeholder, onSearch }) => {
   const handleSearch = (e) => {
