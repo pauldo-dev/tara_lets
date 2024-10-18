@@ -1,0 +1,189 @@
+@import "./variables.scss";
+
+.mentors {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+
+  .mentors-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .top-bar {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h1 {
+        color: $green;
+        font-size: 2rem;
+        margin: 0;
+      }
+    }
+
+    .mentors-main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+
+      .main-column {
+        .section-title {
+          color: $dark-gray;
+          font-size: 1.5rem;
+          margin-bottom: 20px;
+        }
+      }
+
+      .mentor-requests-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+
+        th,
+        td {
+          padding: 12px;
+          text-align: left;
+          border-bottom: 1px solid $light-gray;
+        }
+
+        th {
+          color: $dark-gray;
+          font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+          background-color: $soft-white;
+        }
+
+        .accept-btn,
+        .reject-btn {
+          display: inline-flex;
+          align-items: center;
+          padding: 6px 12px;
+          margin-right: 5px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          font-size: 14px;
+
+          svg {
+            margin-right: 4px;
+          }
+        }
+
+        .accept-btn {
+          background-color: $green;
+          color: white;
+
+          &:hover {
+            background-color: darken($green, 10%);
+          }
+        }
+
+        .reject-btn {
+          background-color: red;
+          color: white;
+
+          &:hover {
+            background-color: darken(red, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+// ... (keep the existing modal styles if any)
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    transform: scale(0.7);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+    &.active {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    h2 {
+      color: $green;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+
+      button {
+        margin-left: 10px;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &.cancel-btn {
+          background-color: $light-gray;
+          color: $dark-gray;
+
+          &:hover {
+            background-color: darken($light-gray, 10%);
+          }
+        }
+
+        &.confirm-btn {
+          color: white;
+
+          &.accept-btn {
+            background-color: $green;
+
+            &:hover {
+              background-color: darken($green, 10%);
+            }
+          }
+
+          &.reject-btn {
+            background-color: red;
+
+            &:hover {
+              background-color: darken(red, 10%);
+            }
+          }
+        }
+      }
+    }
+  }
+}

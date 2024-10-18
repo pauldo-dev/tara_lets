@@ -1,0 +1,40 @@
+@import "variables";
+
+.landing-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $white;
+}
+
+.landing-content {
+  text-align: center;
+  max-width: 600px;
+  padding: 2rem;
+}
+
+.landing-heading {
+  font-family: $font-family;
+  color: $green;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.landing-subheading {
+  font-family: $font-family;
+  color: $gold;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.landing-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  .login-button,
+  .register-button {
+    min-width: 120px;
+  }
+}

@@ -1,0 +1,257 @@
+@import "variables";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+// Add this at the top of the file, after the imports
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  &-primary {
+    background-color: $green;
+    color: $white;
+    border: none;
+
+    &:hover {
+      background-color: darken($green, 10%);
+    }
+  }
+
+  &-secondary {
+    background-color: $gold;
+    color: $white;
+    border: none;
+
+    &:hover {
+      background-color: darken($gold, 10%);
+    }
+  }
+
+  &-outlineGold {
+    background-color: transparent;
+    color: $gold;
+    border: 2px solid $gold;
+
+    &:hover {
+      background-color: $gold;
+      color: $white;
+    }
+  }
+
+  &-outlineGreen {
+    background-color: transparent;
+    color: $green;
+    border: 2px solid $green;
+
+    &:hover {
+      background-color: $green;
+      color: $white;
+    }
+  }
+}
+
+.side-nav {
+  width: 250px;
+  height: 100vh;
+  background-color: white;
+  transition: width 0.3s ease;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+
+  &.collapsed {
+    width: 60px;
+  }
+
+  .side-nav-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin: 2rem 0rem; // Add space below the header
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .website-name {
+      margin-left: 1rem;
+      font-size: 1.2rem;
+      color: $green;
+    }
+
+    .collapse-btn {
+      margin-left: auto;
+      background: none;
+      border: none;
+      color: $green;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+  }
+
+  .nav-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      color: $dark-gray;
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: rgba($green, 0.1);
+      }
+
+      &.active {
+        background-color: $green;
+        color: white;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 4px;
+          background-color: $gold;
+          transform: scaleY(0);
+          transition: transform 0.3s ease;
+        }
+
+        &:hover::before {
+          transform: scaleY(1);
+        }
+      }
+
+      .nav-icon {
+        font-size: 1.5rem;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-text {
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: $soft-white;
+  border-radius: 10px;
+  padding: 10px 15px;
+  width: 300px;
+
+  .search-icon {
+    color: $green;
+    margin-right: 10px;
+  }
+
+  input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-family: $font-family;
+    font-size: 1rem;
+    color: $green;
+    background-color: transparent;
+    &::placeholder {
+      color: rgba($green, 0.5);
+    }
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+
+  .card-title {
+    color: $green;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .card-content {
+    color: $green;
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+
+  &.avatar-small {
+    width: 32px;
+    height: 32px;
+  }
+
+  &.avatar-medium {
+    width: 40px;
+    height: 40px;
+  }
+
+  &.avatar-large {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+
+  h2 {
+    color: $green;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  button {
+    background-color: $green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color;
+  }
+}
