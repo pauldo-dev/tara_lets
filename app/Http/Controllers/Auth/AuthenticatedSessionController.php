@@ -55,13 +55,13 @@ class AuthenticatedSessionController extends Controller
     /**
      * Redirect user based on their role.
      */
-    private function redirectBasedOnRole(User $user): RedirectResponse
+    private function redirectBasedOnRole($user): RedirectResponse
     {
         Log::info('User role: ' . $user->role); // Add this line for debugging
 
         switch ($user->role) {
-            // case 1:
-            //     return redirect()->route('admin.dashboard');
+            case 1:
+                return redirect()->route('admin.dashboard');
             case 2:
                 Log::info('Redirecting to student dashboard'); // Add this line
                 return redirect()->route('student.dashboard');

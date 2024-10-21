@@ -48,23 +48,23 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return $this->redirectBasedOnRole($user);
+        return $this->redirectBasedOnRole(Auth::user());
     }
 
     /**
      * Redirect user based on their role.
      */
-    private function redirectBasedOnRole(User $user): RedirectResponse
+    private function redirectBasedOnRole($user): RedirectResponse
     {
         switch ($user->role) {
-            // case 1:
-            //     return redirect()->route('admin.dashboard');
+            case 1:
+                return redirect()->route('admin.dashboard');
             case 2:
                 return redirect()->route('student.dashboard');
             case 3:
                 return redirect()->route('mentor.dashboard');
-            // default:
-            //     return redirect()->route('dashboard');
+            default:
+                return redirect()->route('dashboard');
         }
     }
 }

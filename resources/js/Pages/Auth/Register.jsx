@@ -11,14 +11,13 @@ export default function Register() {
         email: '',
         password: '',
         password_confirmation: '',
+        role: '', // Add this line
     });
 
     const submit = (e) => {
         e.preventDefault();
 
-        post(route('register'), {
-            onFinish: () => reset('password', 'password_confirmation'),
-        });
+        post(route('register'));
     };
 
     return (
@@ -100,6 +99,25 @@ export default function Register() {
                         message={errors.password_confirmation}
                         className="mt-2"
                     />
+                </div>
+
+                <div className="mt-4">
+                    <InputLabel htmlFor="role" value="Role" />
+
+                    <select
+                        id="role"
+                        name="role"
+                        value={data.role}
+                        className="mt-1 block w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
+                        onChange={(e) => setData('role', e.target.value)}
+                        required
+                    >
+                        <option value="">Select a role</option>
+                        <option value="2">Student</option>
+                        <option value="3">Mentor</option>
+                    </select>
+
+                    <InputError message={errors.role} className="mt-2" />
                 </div>
 
                 <div className="mt-4 flex items-center justify-end">

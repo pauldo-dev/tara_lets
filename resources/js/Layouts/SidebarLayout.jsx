@@ -27,15 +27,15 @@ const SidebarLayout = ({ children }) => {
   };
 
   const navItems = [
-    { name: "Dashboard", icon: <CiGrid41 />, path: route('student-dashboard') },
-    { name: "Mentors", icon: <CiUser />, path: route('student-dashboard.mentors') },
-    { name: "Appointments", icon: <CiCalendar />, path: route('student-dashboard.mentors') },
-    { name: "Feedback", icon: <CiChat1 />, path: route('student-dashboard.mentors') },
-    { name: "Classroom", icon: <CiBookmark />, path: route('student-dashboard.mentors') },
-    { name: "Documents", icon: <CiFileOn />, path: route('student-dashboard.mentors') },
-    { name: "Community", icon: <CiGlobe />, path: route('student-dashboard.mentors') },
-    { name: "Team Chart", icon: <CiCircleChevRight />, path: route('student-dashboard.mentors') },
-    { name: "Settings", icon: <CiSettings />, path: route('student-dashboard.mentors') },
+    { name: "Dashboard", icon: <CiGrid41 />, path: route('student.dashboard') },
+    { name: "Mentors", icon: <CiUser />, path: route('mentor.dashboard') },
+    { name: "Appointments", icon: <CiCalendar />, path: route('student.dashboard') },
+    { name: "Feedback", icon: <CiChat1 />, path: route('student.dashboard') },
+    { name: "Classroom", icon: <CiBookmark />, path: route('student.dashboard') },
+    { name: "Documents", icon: <CiFileOn />, path: route('student.dashboard') },
+    { name: "Community", icon: <CiGlobe />, path: route('student.dashboard') },
+    { name: "Team Chart", icon: <CiCircleChevRight />, path: route('student.dashboard') },
+    { name: "Settings", icon: <CiSettings />, path: route('student.dashboard') },
   ];
 
   return (
