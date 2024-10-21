@@ -28,8 +28,8 @@ const SideNav = () => {
   };
 
   const navItems = [
-    { name: "Dashboard", icon: <CiGrid41 />, path: "/student-dashboard" },
-    { name: "Mentors", icon: <CiUser />, path: "/student-dashboard/mentors" },
+    { name: "Dashboard", icon: <CiGrid41 />, path: "/student.dashboard" },
+    { name: "Mentors", icon: <CiUser />, path: "/student.dashboard.mentors" },
     {
       name: "Appointments",
       icon: <CiCalendar />,
